@@ -1,13 +1,9 @@
 import React from 'react'
 import Item from "./Item";
-
-
-
 const ItemList = ({datos}) => {
     return (
         <div className='contenedor-cards'>
-            {datos.map((dato)=>(
-                
+            {datos.map((dato)=>(                
                 <Item 
                 key={dato.ID}               
                 id={dato.ID}
@@ -17,11 +13,9 @@ const ItemList = ({datos}) => {
                 fecha={dato.FECHA}
                 valor={dato.VALOR}
                 />
-
                 ))}
         </div>
         );
-    };
-    
+    };  
 
 export default ItemList

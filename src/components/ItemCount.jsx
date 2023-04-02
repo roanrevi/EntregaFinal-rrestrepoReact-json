@@ -19,8 +19,9 @@ const ItemCount = ({ id, nombre, cargo, horas, fecha,valor }) => {
     };
     const adicionACart = () => {
         setCart((ItemActuales) => {
-            const ItemEncontrardo = ItemActuales.find((item) => item.id === id);                
-            if (ItemEncontrardo) {
+            const ItemEncontrado = ItemActuales.find((item) => item.id === id); 
+            console.log(item.id)               
+            if (ItemEncontrado) {
                 return ItemActuales.map((item) => {
                 if (item.id === id) {
                     return { ...item, horas: item.horas + contador };
@@ -33,14 +34,39 @@ const ItemCount = ({ id, nombre, cargo, horas, fecha,valor }) => {
             }
             });
         };
+
+        const retirarDeCart = () => {
+            setCart((retirarElem) => {
+                const EncontrarElem = retirarElem.find((Elem) => Elem.id === id);
+                console.log(Elem)
+                if (EncontrarElem) {
+                    return retirarElem.map((Elem) => {
+                    if (Elem.id === id) {
+                        return { ...Elem, horas: Elem.horas - contador };
+                    } else {
+                        return Elem;
+                    }
+                    });
+                } else {
+                    return [...ItemActuales, { id, horas: contador, fecha, nombre, cargo, valor}];
+                }
+                });
+            };
     return (
-        <div className='botons-add'>
+        <>
+        <div className='contador'> 
             <p>{contador}</p>
+        </div>
+        <div className='botons-add'>
             <button className="boton" onClick={restar}> - </button> 
+            <div className="boton-adicionar">
+                <button  onClick={adicionACart}> Agregar </button> 
+            </div>
             <button className="boton" onClick={sumar}> + </button>            
             <br></br> 
-            <button className="boton-adicionar" onClick={adicionACart}> Adicionar al carro </button> 
         </div>
+
+        </>
         );
     };
-export default ItemCount;
+export default ItemCount ;

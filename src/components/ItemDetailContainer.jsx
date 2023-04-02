@@ -5,26 +5,26 @@ import { useParams } from 'react-router-dom';
 
 
 const ItemDetailContainer = () => {    
-        const{id}=useParams();
+        // const{id}=useParams();
             
         
-        const [personal, setPersonal]=useState([]);
-            useEffect(()=>{
-                async function fetchInfo(){
-                    try{
-                        const response= await fetch(data);
-                        const data=await response.json();
-                        setPersonal(data);
-                        }
-                        catch (error){
-                            console.log(error)
+        // const [personal, setPersonal]=useState([]);
+        //     useEffect(()=>{
+        //         async function fetchInfo(){
+        //             try{
+        //                 const response= await fetch(data);
+        //                 const data=await response.json();
+        //                 setPersonal(data);
+        //                 }
+        //                 catch (error){
+        //                     console.log(error)
 
-                        }
-                }
-            fetchInfo();
-            }, []); 
+        //                 }
+        //         }
+        //     fetchInfo();
+        //     }, []); 
 
-            const usuarioFilter=data.filter((dato)=>dato.id == id)
+        //     const usuarioFilter=data.filter((dato)=>dato.id == id)
             return <ItemDetail datos={data}/>;
         
         }

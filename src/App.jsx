@@ -7,13 +7,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cart from './components/Cart'
 import {ShoppingCartProvider} from './context/ShoppingCartContext'
 
-
-
-
 const App = () => {
   return (
-    <div>
-      
         <ShoppingCartProvider>
           <BrowserRouter>
             <NavBar/>        
@@ -26,11 +21,6 @@ const App = () => {
               </Routes>
           </BrowserRouter>
         </ShoppingCartProvider>
-      </div>
-    
-    
-  )
+  );
 }
-
-
 export default App

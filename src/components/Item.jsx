@@ -14,6 +14,7 @@ const Item=({id, nombre, cargo, fecha}) =>{
                 {nombre}</Card.Title>
                 <Button variant="primary" className='boton-card'>
                     <Link to={`/item/${id}`}>DETALLES</Link> 
+                    
                 </Button>
             </Card.Body>
             </Card>
