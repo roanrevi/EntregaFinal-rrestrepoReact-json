@@ -20,7 +20,7 @@ const ItemCount = ({ id, nombre, cargo, horas, fecha,valor }) => {
     const adicionACart = () => {
         setCart((ItemActuales) => {
             const ItemEncontrado = ItemActuales.find((item) => item.id === id); 
-            console.log(item.id)               
+
             if (ItemEncontrado) {
                 return ItemActuales.map((item) => {
                 if (item.id === id) {
